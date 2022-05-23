@@ -2,11 +2,11 @@
 
 Game &quot;Quote&quot; is a daily puzzle game.
 
-<img src="file:///C:/Users/pvkud/Desktop/Picture1.png" />
+!(https://github.com/pvkudr/quotegame/tree/main/image/Picture1.png)
 
 **RULES**
 
-<img src="file:///C:/Users/pvkud/Desktop/Picture2.png" />
+!(https://github.com/pvkudr/quotegame/tree/main/image/Picture2.png)
 
 **BUILD WITH**
 
