@@ -1,0 +1,111 @@
+{% extends 'base.html' %} {% block title %} {% endblock %} {% block content %}
+{{super( )}}
+
+<div class="title">
+  <h1 class="blocks__title">QUOTE</h1>
+</div>
+<div class="upButtons">
+  <div class="d-grid gap-2 d-md-block">
+    <button class="btn btn-outline-dark" id="refresh_button" type="button">
+      Get new Quote
+    </button>
+
+    <button class="btn btn-outline-danger" id="clear" type="button">
+      CLEAR
+    </button>
+  </div>
+</div>
+<div class="mainField">
+  <ul class="blocks__list" id="block_list">
+    <li class="blocks__item" id="b1">Q</li>
+    <li class="blocks__item">U</li>
+    <li class="blocks__item">O</li>
+    <li class="blocks__item">T</li>
+    <li class="blocks__item">E</li>
+  </ul>
+  <div id="insert_point"></div>
+</div>
+<div class="downButtons">
+  <button type="button" class="btn btn-outline-success" id="check">
+    Check answer
+  </button>
+  <div class="alert_box" id="alert_box"></div>
+  {% endblock %}
+
+  <!-- *********************SCRIPT*********************** -->
+  {% block script-%} {{super( )}}
+  <script type="text/javascript">
+    $("document").ready(function () {
+      // CLEAR button
+      $("#clear").click(function () {
+        $(".blocks__item").remove();
+        $("#block_list").append(`<li class="blocks__item" id="b1">Q</li>
+        <li class="blocks__item">U</li>
+        <li class="blocks__item">O</li>
+        <li class="blocks__item">T</li>
+        <li class="blocks__item">E</li>`);
+        var tasksListElement = document.querySelector(`.blocks__list`);
+        var taskElements = tasksListElement.querySelectorAll(`.blocks__item`);
+      });
+
+      // GET NEW QUOTE button
+      $("#refresh_button").click(function () {
+        $(".blocks__item").remove();
+        rnd_number = getRndInteger(0, quotes_bank.length);
+        qt = quotes_bank[rnd_number][0].split(" ");
+
+        for (let index = 0; index < qt.length; index++) {
+          let s =
+            '<li class="blocks__item" id="b' +
+            (index + 1) +
+            '"draggable="true"> </li>';
+          $("#block_list").append(s);
+        }
+
+        let newBlocks = document.querySelectorAll(`.blocks__item`);
+        let ind = 0;
+        old_qt = JSON.parse(JSON.stringify(qt));
+        const new_qt = qt.sort();
+        for (const it of newBlocks) {
+          it.innerHTML = new_qt[ind];
+          ind++;
+        }
+
+        const tasksListElement = document.querySelector(`.blocks__list`);
+        const taskElements = tasksListElement.querySelectorAll(`.blocks__item`);
+      });
+
+      //CHECK BUTTON
+      $("#check").click(function () {
+        let ind = 0;
+        let flag = true;
+        let newBlocks = document.querySelectorAll(`.blocks__item`);
+
+        for (let it of newBlocks) {
+          if (it.innerHTML !== old_qt[ind]) {
+            let alert_message = `
+            <div class="alert_red">
+              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+              <strong>Mistake!</strong> Try again!
+            </div>`;
+
+            $("#alert_box").append(alert_message);
+            flag = false;
+            break;
+          }
+          ind++;
+        }
+
+        if (flag) {
+          let alert_message = `
+            <div class="alert_green">
+              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+              <strong>RIGHT!</strong> WELL DONE! <p></p> QUOTE: <strong>"${quotes_bank[rnd_number][0]}"</strong>, AUTHOR: <strong>${quotes_bank[rnd_number][1]}</strong>`;
+
+          $("#alert_box").append(alert_message);
+        }
+      });
+    });
+  </script>
+  {% endblock -%}
+</div>

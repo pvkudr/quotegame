@@ -1,0 +1,207 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #b2d9d0;
+  background-color: #abb8c3;
+}
+
+.body {
+  display: flex;
+  font-family: "Tahoma", sans-serif;
+  font-size: 18px;
+  line-height: 25px;
+  color: #164a44;
+  background-color: #b2d9d0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+/******************** DIV *************/
+
+/************ MENU *********/
+
+ul.mainmenu {
+  list-style: none;
+  background: #3f4137;
+  height: 60 px;
+  margin: 0;
+  padding: 0;
+  color: #d59343;
+  font-size: 20px;
+  overflow: hidden;
+}
+ul.mainmenu li {
+  float: left;
+  margin: 18px 40px 0 50px;
+}
+
+ul.mainmenu li.last {
+  float: right;
+}
+
+ul.mainmenu li a {
+  color: #fdc073;
+  text-decoration: none;
+}
+ul.mainmenu li a:hover {
+  color: #fda83d;
+}
+
+/* *************TITLE************** */
+
+.blocks__title {
+  margin: 50px 0 20px 0;
+
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* ************UPPER BUTTONS********** */
+
+.upButtons {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0px;
+}
+
+/* *************MAIN FIELD************* */
+.mainField {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.blocks__list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+  display: flex;
+}
+
+.blocks__item {
+  display: flex;
+  float: left;
+
+  margin: 5px;
+  padding: 15px;
+
+  max-width: 600px;
+
+  width: 140px;
+  height: 100px;
+
+  margin-bottom: 10px;
+  padding: 5px;
+
+  text-align: center;
+  border: 2px dashed #b2d9d0;
+  border-radius: 10px;
+  cursor: move;
+  background-color: #dff2ef;
+
+  transition: background-color 0.5s;
+  font-size: 30px;
+}
+
+.blocks__item:last-child {
+  margin-bottom: 0;
+}
+
+.selected {
+  opacity: 0.6;
+}
+
+/*******************RULES************* */
+.rules_text {
+  font-size: 36px;
+
+  /* background-color: #e6e6e6; */
+}
+.field_example {
+  margin: 5px;
+  padding: 15px;
+
+  max-width: 600px;
+
+  width: 140px;
+  height: 100px;
+
+  margin-bottom: 10px;
+  padding: 5px;
+
+  text-align: center;
+  border: 2px dashed #b2d9d0;
+  border-radius: 10px;
+  cursor: move;
+  background-color: #dff2ef;
+
+  transition: background-color 0.5s;
+  font-size: 30px;
+}
+
+.body {
+  display: flex;
+  font-family: "Tahoma", sans-serif;
+}
+
+/*******************FORMS************* */
+
+.form-contact label {
+  display: inline-block;
+  min-width: 80px;
+}
+.form-contact p {
+  margin: 10px 0 10px 0;
+}
+.form-contact input[type="submit"],
+textarea {
+  font-size: 16px;
+}
+
+.flash {
+  padding: 10px;
+}
+.flash.success {
+  border: 1px solid #21db56;
+  background: #aeffc5;
+}
+.flash.error {
+  border: 1px solid #ff4343;
+  background: #ff9c9c;
+}
+
+/*********************** ALERTS ****************/
+.alert_red {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #b67846;
+  color: white;
+}
+.alert_green {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #1a690e;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
