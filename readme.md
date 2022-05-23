@@ -33,6 +33,7 @@ Werkzeug==2.1.2
 **HOW TO USE**
 
 1. Clone the repository
+https://github.com/pvkudr/quotegame
 2. Install dependencies
 3. Run the app
 
